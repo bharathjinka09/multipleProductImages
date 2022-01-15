@@ -22,6 +22,7 @@
                     <h5 class="card-title">{{product.title}}</h5>
                     <a href="{% url 'productdetail' product.id %}" class="btn btn-primary btn-sm">Detail</a>
                     <a href="{% url 'addimage' product.id %}" class="btn btn-secondary btn-sm">Add images</a>
+                    <a href="{% url 'deleteproduct' product.id %}" class="btn btn-danger btn-sm">Delete</a>
                 </div>
             </div>
             {% else %}
