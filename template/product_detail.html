@@ -8,7 +8,9 @@
     <h4>{{productobj.title}}</h4>
     <br />
     {% for pimage in productobj.images_set.all %}
-    <img src="{{pimage.images.url}}" class="card-img-top" alt="..." style="width: 200px; height: 200px;">
+        <a href="{{pimage.images.url}}">
+            <img src="{{pimage.images.url}}" class="card-img-top p-2" alt="..." style="width: 200px; height: 200px;">
+        </a>
     {% empty %}
     <p>No images yet </p>
     {% endfor %}

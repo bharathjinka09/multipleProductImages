@@ -9,21 +9,25 @@
     <br />
     <hr />
     <div class="row">
+            
         {% for product in productlist %}
-        <div class="card m-4" style="width: 18rem;">
-            <img src="{{product.banner.url}}" class="card-img-top" alt="..." style="width: 200px; height: 200px;">
-            <div class="card-body">
-                <h5 class="card-title">{{product.title}}</h5>
-                <a href="{% url 'productdetail' product.id %}" class="btn btn-primary btn-sm">Detail</a>
-                <a href="{% url 'addimage' product.id %}" class="btn btn-secondary btn-sm">Add images</a>
+            {% if productlist|length > 0 %}
+          <div class="col-md-4">
+            <div class="card m-4" style="width: 18rem;">
+                <center>
+                    
+                    <img src="{{product.banner.url}}" class="card-img-top" alt="..." style="width: 200px; height: 200px;">
+                </center>
+                <div class="card-body">
+                    <h5 class="card-title">{{product.title}}</h5>
+                    <a href="{% url 'productdetail' product.id %}" class="btn btn-primary btn-sm">Detail</a>
+                    <a href="{% url 'addimage' product.id %}" class="btn btn-secondary btn-sm">Add images</a>
+                </div>
             </div>
-            <h1>Hello all i am sundar tamang from kathamandu nepal</h1>
-            <h2>I am here to test my obs studio recording</h2>
-
-            <h1>This is the home page of my multiple image upload in django</h1>
-            <h1>This is another home page again here</h1>
+            {% else %}
+                <p>No product yet</p>
+            {% endif %}
         </div>
-        <p>No product yet</p>
         {% endfor %}
     </div>
 </div>
