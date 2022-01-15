@@ -10,9 +10,11 @@ class ProductForm(forms.ModelForm):
             'title': forms.TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Enter title',
+                'required': True
             }),
             'display_image': forms.ClearableFileInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Select banner image',
+                'required': True
             }),
         }

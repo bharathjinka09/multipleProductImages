@@ -10,7 +10,7 @@ class HomeView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['productlist'] = Product.objects.all()
+        context['productlist'] = Product.objects.all()[::-1]
         return context
     
 
@@ -31,7 +31,7 @@ class ProductDetailView(TemplateView):
         return context
     
     
-# add immages of product
+# add images of product
 class AddProductImagesView(TemplateView):
     template_name = "add_images.html"
     

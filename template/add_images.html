@@ -5,11 +5,11 @@
     <h1>Add images</h1>
     <br />
     <hr />
-    <form method="POST" novalidate enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <label>Images</label>
         <br />
-        <input class="form-control" multiple type="file" name="images" />
+        <input class="form-control" multiple type="file" name="images" required />
         <br />
         <button class="btn btn-primary my-3" type="submit">Submit</button>
     </form>

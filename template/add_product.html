@@ -5,7 +5,7 @@
     <h1>Add product</h1>
     <br />
     <hr />
-    <form method="POST" novalidate enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.title}}
         <br />
