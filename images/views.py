@@ -26,6 +26,14 @@ class DeleteProductView(DeleteView):
 	model = Product
 	success_url = reverse_lazy('home')
 
+	def delete(self, request,*args, **kwargs):
+		try:
+			product = Product.objects.get(id = self.kwargs['pk'])
+			product.delete()
+			return redirect('home')
+		except Exception as e:
+			print(e)
+
 class DeleteImageView(DeleteView):
 	model = Images
 	success_url = reverse_lazy('home')
