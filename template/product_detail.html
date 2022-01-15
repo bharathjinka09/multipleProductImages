@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
+<!-- <style type="text/css">
+    @media(max-width: 640px){
+        img{
+            width: auto;
+        }
+    }
+</style> -->
 <div class="container my-5">
     <h1>Product detail</h1>
     <br />
@@ -9,7 +16,7 @@
     <br />
     {% for pimage in productobj.images_set.all %}
         <a href="{{pimage.images.url}}">
-            <img src="{{pimage.images.url}}" class="card-img-top p-2" alt="..." style="width: 200px; height: 200px;">
+                <img src="{{pimage.images.url}}" class="card-img-top p-2 mx-auto" alt="..." style="width: 200px; height: 200px;">
         </a>
     {% empty %}
     <p>No images yet </p>
